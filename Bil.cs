@@ -22,5 +22,31 @@ namespace GA_CodeAlong
             TopSpeed = topSpeed;
             MileAge = mileAge;
         }
+
+        public void RunCar()
+        { 
+            MileAge = 0;
+            Speed = 10;
+
+            while (MileAge <= 1000)
+            {
+                if (MileAge == 0 || MileAge < 500)
+                {
+                    Speed += 10;
+                    Console.WriteLine("Speed opp");
+                }
+                else if (MileAge <= 1000 && Speed >= 10)
+                {
+                    Speed -= 10;
+                    Console.WriteLine("Speed ned");
+                }
+                else
+                {
+                    Speed = 10;
+                }
+                MileAge += 10;
+            }
+            Console.WriteLine("Bilen er parkert og du er fremme.");
+        }
     }
 }
