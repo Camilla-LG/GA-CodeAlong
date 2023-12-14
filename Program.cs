@@ -10,7 +10,7 @@
     {
         static void Main()
         {
-            Bil BilInstance = new Bil("", Int32.MaxValue, Int32.MaxValue, Int32.MaxValue, Int32.MaxValue);
+            Bil BilInstance = new Bil("", Int32.MaxValue, Int32.MaxValue);
             
             BilInstance.RunCar();
         }

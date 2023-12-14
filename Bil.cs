@@ -10,16 +10,12 @@ namespace GA_CodeAlong
     {
         public string Car;
         public int Speed;
-        public int MinSpeed;    
-        public int TopSpeed;
         public int MileAge;
 
-        public Bil(string car, int speed, int minSpeed, int topSpeed, int mileAge)
+        public Bil(string car, int speed, int mileAge)
         {
             Car = car;
             Speed = speed;
-            MinSpeed = minSpeed;
-            TopSpeed = topSpeed;
             MileAge = mileAge;
         }
 
@@ -28,21 +24,27 @@ namespace GA_CodeAlong
             MileAge = 0;
             Speed = 10;
 
+            Console.WriteLine("God tur!");
+
             while (MileAge <= 1000)
             {
-                if (MileAge == 0 || MileAge < 500)
+                if (MileAge == 0 || MileAge <= 500)
                 {
                     Speed += 10;
-                    Console.WriteLine("Speed opp");
+
+                    if (MileAge == 500) 
+                    {
+                        Console.WriteLine("Du er halvveis, på tide å slakke ned farta");
+                    }
                 }
                 else if (MileAge <= 1000 && Speed >= 10)
                 {
                     Speed -= 10;
-                    Console.WriteLine("Speed ned");
                 }
                 else
                 {
                     Speed = 10;
+                    Console.WriteLine("Du har nådd minimumsspeed på 10m/s.");
                 }
                 MileAge += 10;
             }
