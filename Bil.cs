@@ -44,7 +44,6 @@ namespace GA_CodeAlong
                 else
                 {
                     Speed = 10;
-                    Console.WriteLine("Du har nådd minimumsspeed på 10m/s.");
                 }
                 MileAge += 10;
             }
