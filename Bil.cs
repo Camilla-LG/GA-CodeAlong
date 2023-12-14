@@ -28,7 +28,7 @@ namespace GA_CodeAlong
 
             while (MileAge <= 1000)
             {
-                if (MileAge == 0 || MileAge <= 500)
+                if (MileAge <= 500)
                 {
                     Speed += 10;
 
@@ -40,10 +40,6 @@ namespace GA_CodeAlong
                 else if (MileAge <= 1000 && Speed >= 10)
                 {
                     Speed -= 10;
-                }
-                else
-                {
-                    Speed = 10;
                 }
                 MileAge += 10;
             }
