@@ -73,5 +73,36 @@ namespace GA_CodeAlong
                 }
             }
         }
+        public void BetterCarRace(Vehicle vehicle)
+        {
+            Random random = new Random();
+            var driverIndex = random.Next(0, vehicle.cars.Count);
+            var opponentIndex = random.Next(0, vehicle.cars.Count);
+
+            Console.WriteLine("Velkommen til RaceWars!");
+
+            Console.WriteLine($"Du kjører {vehicle.cars[driverIndex].CarName} mot {vehicle.cars[opponentIndex].CarName}!");
+            Console.WriteLine("KJØØØØØØR!");
+            Console.WriteLine();
+
+            while (vehicle.cars[driverIndex].MileAge <= 1000 || vehicle.cars[opponentIndex].MileAge <= 1000)
+            {
+                vehicle.cars[driverIndex].MileAge += vehicle.cars[driverIndex].Speed;
+                vehicle.cars[opponentIndex].MileAge += vehicle.cars[opponentIndex].Speed;
+
+                if (vehicle.cars[driverIndex].MileAge == 1000 && vehicle.cars[opponentIndex].MileAge < 1000)
+                {
+                    Console.WriteLine($"Du vant med {vehicle.cars[driverIndex].CarName}!");
+                }
+                else if (vehicle.cars[driverIndex].MileAge < 1000 && vehicle.cars[opponentIndex].MileAge == 1000)
+                {
+                    Console.WriteLine($"{vehicle.cars[opponentIndex].CarName} vant! Sorry, buhu...");
+                }
+                else if (vehicle.cars[driverIndex].MileAge == 1000 && vehicle.cars[opponentIndex].MileAge == 1000)
+                {
+                    Console.WriteLine("It's a tie");
+                }
+            }
+        }
     }
 }

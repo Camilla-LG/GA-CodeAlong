@@ -15,6 +15,7 @@ namespace GA_CodeAlong
             bool RunProgram = true;
             Vehicle vehicle = new Vehicle("", Int32.MaxValue, Int32.MaxValue);
             Drive drive = new Drive();
+            vehicle.AddCarsToList();
 
             while (RunProgram)
             {
@@ -35,7 +36,7 @@ namespace GA_CodeAlong
                         Console.WriteLine();
                         break;
                     case '2':
-                        drive.CarRace(vehicle);
+                        drive.BetterCarRace(vehicle);
                         Console.WriteLine();
                         break;
                     case '3':
