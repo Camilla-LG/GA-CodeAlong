@@ -85,22 +85,22 @@ namespace GA_CodeAlong
             Console.WriteLine("KJØØØØØØR!");
             Console.WriteLine();
 
-            while (vehicle.cars[driverIndex].MileAge <= 1000 || vehicle.cars[opponentIndex].MileAge <= 1000)
+            while (vehicle.cars[driverIndex].MileAge < 1000 || vehicle.cars[opponentIndex].MileAge < 1000)
             {
                 vehicle.cars[driverIndex].MileAge += vehicle.cars[driverIndex].Speed;
                 vehicle.cars[opponentIndex].MileAge += vehicle.cars[opponentIndex].Speed;
-
-                if (vehicle.cars[driverIndex].MileAge == 1000 && vehicle.cars[opponentIndex].MileAge < 1000)
+                
+                switch (vehicle.cars[driverIndex].MileAge)
                 {
-                    Console.WriteLine($"Du vant med {vehicle.cars[driverIndex].CarName}!");
-                }
-                else if (vehicle.cars[driverIndex].MileAge < 1000 && vehicle.cars[opponentIndex].MileAge == 1000)
-                {
-                    Console.WriteLine($"{vehicle.cars[opponentIndex].CarName} vant! Sorry, buhu...");
-                }
-                else if (vehicle.cars[driverIndex].MileAge == 1000 && vehicle.cars[opponentIndex].MileAge == 1000)
-                {
-                    Console.WriteLine("It's a tie");
+                    case 1000 when vehicle.cars[opponentIndex].MileAge < 1000:
+                        Console.WriteLine($"Du vant med {vehicle.cars[driverIndex].CarName}!");
+                        break;
+                    case < 1000 when vehicle.cars[opponentIndex].MileAge == 1000:
+                        Console.WriteLine($"{vehicle.cars[opponentIndex].CarName} vant! Sorry, buhu...");
+                        break;
+                    case 1000 when vehicle.cars[opponentIndex].MileAge == 1000:
+                        Console.WriteLine("It's a tie");
+                        break;
                 }
             }
         }
